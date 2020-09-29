@@ -16,7 +16,7 @@ def getRepos(inp = input('Please eneter GitHub user ID: ')):
     """
     
     #inp = input('Please eneter GitHub user ID: ')
-    response_repos = requests.get(f'https://api.github.com/users/camckenzie/repos')
+    response_repos = requests.get(f'https://api.github.com/users/{inp}/repos')
     # Creates dictionary out of JSON objects
     dict_repos = response_repos.json()
 
@@ -31,7 +31,7 @@ def getRepos(inp = input('Please eneter GitHub user ID: ')):
         counter = Counter(key for item in dict_commits)
         print(f'Repo: {repo["name"]}; Number of commits: {counter[key]}')
 
-getRepos("camckenzie")
+getRepos()
 
 
 
