@@ -29,7 +29,7 @@ def getRepos(inp = input('Please eneter GitHub user ID: ')):
         # Tracks number of times key variable appears in dictionary
         # This indicates the number of commits
         counter = Counter(key for item in dict_commits)
-        print(f'Repo: {repo["name"]}; Number of commits: {counter[key]}')
+        print("Repo: " + repo["name"] + "; Number of commits: " + str(counter[key]))
 
 getRepos()
 
