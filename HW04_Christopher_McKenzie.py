@@ -16,7 +16,7 @@ def getRepos(inp = input('Please eneter GitHub user ID: ')):
     """
     
     #inp = input('Please eneter GitHub user ID: ')
-    response_repos = requests.get(f'https://api.github.com/users/{inp}/repos')
+    response_repos = requests.get(f'https://api.github.com/users/camckenzie/repos')
     # Creates dictionary out of JSON objects
     dict_repos = response_repos.json()
 
