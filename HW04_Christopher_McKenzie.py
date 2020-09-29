@@ -16,14 +16,14 @@ def getRepos(inp = input('Please eneter GitHub user ID: ')):
     """
     
     #inp = input('Please eneter GitHub user ID: ')
-    response_repos = requests.get(f'https://api.github.com/users/{inp}/repos')
+    response_repos = requests.get("https://api.github.com/users/" + inp + "/repos")
     # Creates dictionary out of JSON objects
     dict_repos = response_repos.json()
 
     for repo in dict_repos:
         
         # Uses input for user and iterates through repo names from dictionary to create urls
-        response_commits = requests.get(f'https://api.github.com/repos/{inp}/{repo["name"]}/commits')
+        response_commits = requests.get("https://api.github.com/repos/" + inp + "/" + repo["name"] + "/commits")
         dict_commits = response_commits.json()
         key = '"commit:" {'
         # Tracks number of times key variable appears in dictionary
