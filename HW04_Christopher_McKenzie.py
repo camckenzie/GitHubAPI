@@ -8,14 +8,16 @@ import requests
 import json
 from collections import Counter
 
-def getRepos(inp = input('Please eneter GitHub user ID: ')):
+def getRepos(inp = "camckenzie"):
 
     """Prompts input for GitHub user ID and provides number of repos
     created by user and the corresponding number of commits for each
     commit.
     """
     
-    #inp = input('Please eneter GitHub user ID: ')
+    # Uncomment bellow to allow inputs from user.
+    # Leave default input of camckenzie for Travis CI
+    # inp = input('Please eneter GitHub user ID: ')
     response_repos = requests.get("https://api.github.com/users/" + inp + "/repos")
     # Creates dictionary out of JSON objects
     dict_repos = response_repos.json()
@@ -31,7 +33,7 @@ def getRepos(inp = input('Please eneter GitHub user ID: ')):
         counter = Counter(key for item in dict_commits)
         print("Repo: " + repo["name"] + "; Number of commits: " + str(counter[key]))
 
-getRepos()
+
 
 
 
