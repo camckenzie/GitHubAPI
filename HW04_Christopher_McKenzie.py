@@ -31,7 +31,7 @@ def getRepos(inp = input('Please eneter GitHub user ID: ')):
         counter = Counter(key for item in dict_commits)
         print(f'Repo: {repo["name"]}; Number of commits: {counter[key]}')
 
-getRepos()
+getRepos("camckenzie")
 
 
 
