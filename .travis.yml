@@ -5,4 +5,4 @@ install:
   - pip install requests
 # command to run tests
 script:
-  - python -m HW04_Christopher_McKenzie
+  - python -m HW04_Tests_Christopher_McKenzie
