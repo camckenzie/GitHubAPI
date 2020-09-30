@@ -6,7 +6,6 @@ repository.
 
 import requests
 import json
-from collections import Counter
 
 def getRepos(inp = "camckenzie"):
 
@@ -28,12 +27,13 @@ def getRepos(inp = "camckenzie"):
         response_commits = requests.get("https://api.github.com/repos/" + inp + "/" + repo["name"] + "/commits")
         dict_commits = response_commits.json()
         key = '"commit:" {'
-        # Tracks number of times key variable appears in dictionary
+        # Below tracks number of times key variable appears in dictionary
         # This indicates the number of commits
-        counter = Counter(key for item in dict_commits)
-        print("Repo: " + repo["name"] + "; Number of commits: " + str(counter[key]))
-
-
+        # counter = Counter(key for item in dict_commits)
+        counter = 0
+        for key in dict_commits:
+            counter += 1
+        print("Repo: " + repo["name"] + "; Number of commits: " + str(counter))
 
 
 
