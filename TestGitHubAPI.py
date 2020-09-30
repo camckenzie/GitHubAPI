@@ -5,16 +5,16 @@ The purpose of this program is to test the getRepos function.
 import unittest
 import requests
 import json
-from HW04_Christopher_McKenzie import getRepos
+from GitHubAPI import getRepos
 
 class TestGetRepos(unittest.TestCase):
 
-    def testGetReposChris(self):
+    def testGetReposValid(self):
 
         """Tests valid user ID and its results"""
 
         camckenzieData = ['Repo: CodeNames; Number of commits: 11',
-        'Repo: GitHubAPI; Number of commits: 17',
+        'Repo: GitHubAPI; Number of commits: 19',
         'Repo: hello-world; Number of commits: 3',
         'Repo: Student-Repository; Number of commits: 22',
         'Repo: Triangle; Number of commits: 15']

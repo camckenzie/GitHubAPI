@@ -17,10 +17,6 @@ def getRepos(inp: str = "Empty input"):
         return "Error: Must input valid GitHub User ID."
     elif type(inp) != str:
         return "Error: Input must be a string."
-
-    # Uncomment bellow to allow inputs from user.
-    # Leave default input of camckenzie for Travis CI
-    # inp = input('Please eneter GitHub user ID: ')
     
     reponse = requests.get("https://api.github.com/users/" + inp + "/repos")
 
@@ -57,7 +53,6 @@ def getRepos(inp: str = "Empty input"):
 
         # Below tracks number of times key variable appears in dictionary
         # This indicates the number of commits
-        # counter = Counter(key for item in dict_commits)
         counter = 0
         for key in dict_commits:
             counter += 1
@@ -66,5 +61,3 @@ def getRepos(inp: str = "Empty input"):
 
     return repoData
 
-
-print(getRepos("camckenzie"))
