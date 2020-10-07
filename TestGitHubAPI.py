@@ -45,6 +45,7 @@ class TestGetRepos(unittest.TestCase):
 
     """The below tests error conditions and messages"""
 
+    # This does not reach requests.get method
     def testNoInput(self):
         self.assertEqual(getRepos(), "Error: Must input valid GitHub User ID.")
 
@@ -56,6 +57,7 @@ class TestGetRepos(unittest.TestCase):
         injectedMock.side_effect = results
         self.assertEqual(getRepos("norepoaccount"), "Error: The user has not created any repos.")
 
+    # These do not reach requests.get method
     def testNonStringInputs(self):
 
         self.assertEqual(getRepos(1), "Error: Input must be a string.")
