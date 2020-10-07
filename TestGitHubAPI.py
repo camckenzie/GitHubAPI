@@ -25,9 +25,14 @@ class TestGetRepos(unittest.TestCase):
         
         # The mock data that is being patched in
         results = [Mock(), Mock(), Mock(), Mock(), Mock(), Mock()]
+
+        # All the repo names received for the first requests.get call
         results[0].json.return_value = json.loads('[ { "name" : "CodeNames" }, \
             { "name" : "GitHubAPI" },  { "name" : "hello-world" }, \
             { "name" : "Student-Repository" },  { "name" : "Triangle" } ]')
+       
+        # Every requests.get call after which gives the number of commits
+        # for each repo.
         results[1].json.return_value = json.loads('[' + '{ "commit" : "1" }, ' * 10 + '{ "commit" : "11" }]')
         results[2].json.return_value = json.loads('[' + '{ "commit" : "1" }, ' * 21 + '{ "commit" : "22" }]')
         results[3].json.return_value = json.loads('[' + '{ "commit" : "1" }, ' * 2 + '{ "commit" : "3" }]')

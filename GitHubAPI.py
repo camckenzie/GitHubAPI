@@ -24,7 +24,6 @@ def getRepos(inp: str = "Empty input"):
     # Type changes to list if API rate limit exceeded or
     # User has not created any repos
     repos = response.json()
-    #print(repos)
     if type(repos) == list:
         if "API rate limit exceeded" in repos:
             # Unable to test for this unless rate limit reached
@@ -54,4 +53,3 @@ def getRepos(inp: str = "Empty input"):
 
     return repoData
 
-#print(getRepos('NonExistentUser'))
