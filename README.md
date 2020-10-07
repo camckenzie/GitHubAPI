@@ -1,4 +1,4 @@
-[![build status of master](https://travis-ci.org/camckenzie/GitHubAPI.svg?branch=master)](https://travis-ci.org/camckenzie/GitHubAPI)
+[![build status of HW05a_Mocking](https://travis-ci.org/camckenzie/GitHubAPI.svg?branch=HW05a_Mocking)](https://travis-ci.org/camckenzie/GitHubAPI)
 
 Christopher McKenzie
 
